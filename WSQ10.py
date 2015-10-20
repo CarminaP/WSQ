@@ -1,3 +1,4 @@
+from statistics import *
 x= 10
 s=0
 numbers = []
@@ -6,8 +7,11 @@ while x > 0:
     numbers.append(n)
     x-=1
 for i in numbers:
-    s=s+i
+    suma += i
 print (("The total of the numbers is: ")+str(s))
-l = len(numbers)
-a = s/l
-print (("The average is: ")+str(a))
+
+avrg = suma/len(numbers)
+print (("The average is: ")+str(avrg))
+
+stdev = pstdev(numbers)
+print (("The standard deviation is: ")+str(stdev))
