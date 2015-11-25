@@ -1,19 +1,13 @@
 with open('movies.txt', 'r') as document:
-    dictionary1 = {}
-    dictionary2 = {}
+    movie_dict = {}
     for line in document:
         line = line.strip("\r\n")
         line = line.split(", ")
-        dictionary1[line[0]] = line[1:]
-    for item in dictionary1:
-        movies = item.values()
-        print(movies)
-        actor = item.keys()
-        print(actor)
-        for movie in movies:
-            if movie not in dictionary2:
-                dictionary2.setdefault(movie,[]).append(actor)
-            elif movie in dictionary2:
-                dictionary2.append(actor)
-            else:
-                break
+        for i in range(0,(len(line)-1)):
+            if line[i+1] not in movie_dict:
+                movie_dict[line[i+1]] = line[0]
+            elif line[i+1] in movie_dict:
+                key = line[i+1]
+                movie_dict.setdefault(key, [])
+                movie_dict[key].append(line[0])
+        print (movie_dict)
