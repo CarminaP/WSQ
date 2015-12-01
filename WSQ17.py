@@ -10,3 +10,7 @@ with open('movies.txt', 'r') as document:
                 dictionary[movie] = [actor]
             else:
                 dictionary[movie].append(actor)
+print(("The Movie Titles available are: ")+str(dictionary.keys()))
+movie1 = input("Choose a title: ")
+movie2 = input("Choose another title: ")
+print (("The actors that appear in both movie titles are: ")+ str(dictionary.get(movie1))+ str(dictionary.get(movie2)))
