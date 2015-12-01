@@ -21,6 +21,6 @@ for a in dictionary.get(movie1):
         if a == b:
             common.append(a)
         else:
-            excusive.append(a,b)
+            exclusive.append(a,b)
 print (("The actors that appear in both movies are: ")+str(common))
 print (("The actors that appear in those movies but not on both are: ")+str(exclusive))
