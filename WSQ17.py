@@ -13,4 +13,10 @@ with open('movies.txt', 'r') as document:
 print(("The Movie Titles available are: ")+str(dictionary.keys()))
 movie1 = input("Choose a title: ")
 movie2 = input("Choose another title: ")
-print (("The actors that appear in both movie titles are: ")+ str(dictionary.get(movie1))+ str(dictionary.get(movie2)))
+print (("The actors that participated on those move titles were: ")+ str(dictionary.get(movie1))+ str(dictionary.get(movie2)))
+answer = []
+for a in dictionary.get(movie1):
+    for b in dictionary.get(movie2):
+        if a == b:
+            answer.append(a)
+print (("The actors that appear in both movies are: ")+str(answer))
